@@ -106,8 +106,11 @@ let test2 = extractInterested ("Jazz or Football",(991,1982,["soccer";"jazz"])) 
 // The expected result of test3 is three pairs of tlf nr and name of Andrew, Bill and Søren Pilmark
 let test3 = extractInterested ("Netflix Marathon",(999,1890,["tv";"cake"])) reg 1 = [(21931319, "Andrew"); (28913453, "Bill"); (295435363, "Søren Pilmark")]
 
-// The expected result of test3 is three pairs of tlf nr and name of Timmy and Dovahkiin
+// The expected result of test4 is three pairs of tlf nr and name of Timmy and Dovahkiin
 let test4 = extractInterested ("Lan Party",(666,1890,["tv";"games";"crendor";"dungeons"])) reg 2 = [(13371337, "Dovahkiin"); (24353462, "Timmy")]
 
-// The expected result of test3 is three pairs of tlf nr and name of Bob and Bill
+// The expected result of test5 is three pairs of tlf nr and name of Bob and Bill
 let test5 = extractInterested ("Science and Engineering Convention",(1942,1890,["explosions";"science";"engineering"])) reg 2 = [(88888888, "Bob"); (28913453, "Bill")] 
+
+// The expected result of test6 is three pairs of tlf nr and name of Bob and Bill
+let test6 = extractInterested ("Public Service Announcement",(1800,-1,["emergency"])) reg 0 = [(42021021,"Tim"); (88888888,"Bob"); (12312831,"Scott"); (21931319,"Andrew"); (28913453,"Bill"); (13371337,"Dovahkiin"); (295435363,"Søren Pilmark"); (24353462,"Timmy"); (343253463,"Boar Thrills")]
