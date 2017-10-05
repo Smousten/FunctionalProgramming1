@@ -94,23 +94,18 @@ let extractInterested arrangment cMemberReg noOfMatches =
    interestedMembers
     
 // The expected result of test1 is a pair of tlf nr and name of Tim
-let test1 = extractInterested ("Jazz 'n' Football",(112,1982,["soccer";"jazz"])) reg 2
-// val test1 : (int * string) list = [(42021021, "Tim")]
+let test1 = extractInterested ("Jazz 'n' Football",(112,1982,["soccer";"jazz"])) reg 2 =[(42021021, "Tim")]
 
 // The expected result of test2 is two pairs of tlf nr and name of Tim and Andrew
-let test2 = extractInterested ("Jazz or Football",(991,1982,["soccer";"jazz"])) reg 1
-// val test2 : (int * string) list = [(42021021, "Tim"); (21931319, "Andrew")]
+let test2 = extractInterested ("Jazz or Football",(991,1982,["soccer";"jazz"])) reg 1 = [(42021021, "Tim"); (21931319, "Andrew")]
 
 // The expected result of test3 is three pairs of tlf nr and name of Andrew, Bill and Søren Pilmark
-let test3 = extractInterested ("Netflix Marathon",(666,1890,["tv";"cake"])) reg 1
-//val test3 : (int * string) list = [(21931319, "Andrew"); (28913453, "Bill"); (295435363, "Søren Pilmark")]
+let test3 = extractInterested ("Netflix Marathon",(999,1890,["tv";"cake"])) reg 1 = [(21931319, "Andrew"); (28913453, "Bill"); (295435363, "Søren Pilmark")]
 
 // The expected result of test3 is three pairs of tlf nr and name of Timmy and Dovahkiin
-let test4 = extractInterested ("Lan Party",(666,1890,["tv";"games";"crendor";"dungeons"])) reg 2
-//val test4 : (int * string) list = [(13371337, "Dovahkiin"); (24353462, "Timmy")]
+let test4 = extractInterested ("Lan Party",(666,1890,["tv";"games";"crendor";"dungeons"])) reg 2 = [(13371337, "Dovahkiin"); (24353462, "Timmy")]
 
 // The expected result of test3 is three pairs of tlf nr and name of Bob and Bill
-let test5 = extractInterested ("Science and Engineering Convention",(1942,1890,["explosions";"science";"engineering"])) reg 2
-//val test5 : (int * string) list = [(88888888, "Bob"); (28913453, "Bill")]
+let test5 = extractInterested ("Science and Engineering Convention",(1942,1890,["explosions";"science";"engineering"])) reg 2 = [(88888888, "Bob"); (28913453, "Bill")] 
 
 //Whitebox test
