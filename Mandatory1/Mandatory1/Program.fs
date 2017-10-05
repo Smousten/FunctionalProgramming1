@@ -1,6 +1,4 @@
-﻿
-
-type no = int                                           // tlf nr
+﻿type no = int                                           // tlf nr
 type yb = int                                           // year of birth
 type ths = string list                                  // themes of interests
 type name = string                                      // member name
@@ -15,10 +13,10 @@ let reg = [("Tim",(42021021,1996,["soccer";"jazz"]));
            ("Andrew",(21931319,1992,["soccer";"basketball"]))]
 
 // predicate 1 is an arrangement for young people interested in both soccer and jazz
-let p1 = (112,1982,["soccer";"jazz"])
+let p1 = (112,1982,["soccer";"jazz"]) // Both
 
 // predicate 1 is an arrangement for young people interested in either soccer or jazz
-let p2 = (113,1982,["soccer";"jazz"])
+let p2 = (113,1982,["soccer";"jazz"]) // Either
 
 // auxilliary functions to get member name and description, type for getName: 'a * 'b -> 'a, type for getDesc: 'b -> 'b
 let getName (name,_) = name
@@ -30,7 +28,7 @@ let ybirth (_,yb,_) = yb // type: 'a * 'b * 'c -> 'b
 let themes (_,_,ths) = ths // type: 'a * 'b * 'c -> 'c
 
 // Auxilliary method to see if same element exists in to lists, type: 'a -> 'a list -> bool
-let rec contains y = function 
+let rec contains y = function
     | [] -> false
     | x::xs -> x=y || contains y xs
     
@@ -57,8 +55,11 @@ let rec extractInterested p r =
                    else extractInterested p rtail
 
 // The expected result of test1 is a pair of tlf nr and name of Tim
-let test1 = extractInterested p1 reg
+let test1 = extractInterested p1 reg 
+// val test1 : (int * string) list = [(42021021, "Tim")]
 
 // The expected result of test2 is two pairs of tlf nr and name of Tim and Andrew
 let test2 = extractInterested p2 reg
-            
+// val test2 : (int * string) list = [(42021021, "Tim"); (21931319, "Andrew")]
+
+//Whitebox test
