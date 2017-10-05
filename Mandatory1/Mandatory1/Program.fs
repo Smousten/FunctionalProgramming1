@@ -92,7 +92,11 @@ let rec allInterested arrangment reg noOfMatches =
 let extractInterested arrangment cMemberReg noOfMatches =
    let interestedMembers = List.append (allInterested arrangment cMemberReg noOfMatches) []
    interestedMembers
-    
+
+// ///////////////////////////////////////////////////////////////////////////
+// |-------------------------- Whitebox Tests -------------------------------|
+// \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
 // The expected result of test1 is a pair of tlf nr and name of Tim
 let test1 = extractInterested ("Jazz 'n' Football",(112,1982,["soccer";"jazz"])) reg 2 =[(42021021, "Tim")]
 
@@ -107,5 +111,3 @@ let test4 = extractInterested ("Lan Party",(666,1890,["tv";"games";"crendor";"du
 
 // The expected result of test3 is three pairs of tlf nr and name of Bob and Bill
 let test5 = extractInterested ("Science and Engineering Convention",(1942,1890,["explosions";"science";"engineering"])) reg 2 = [(88888888, "Bob"); (28913453, "Bill")] 
-
-//Whitebox test
